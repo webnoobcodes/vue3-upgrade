@@ -8,6 +8,18 @@
   </div>
 </template>
 
+<script>
+  import { eventBus } from "@/eventBus";
+
+  export default {
+    created() {
+      eventBus.$on('say-hello', () => {
+        console.log('Hello');
+      })
+    }
+  }
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
